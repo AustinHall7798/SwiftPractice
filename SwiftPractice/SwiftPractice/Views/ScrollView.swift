@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ScrollView: View, Identifiable, ViewContents {
+struct ScrollView: View, Identifiable, CustomView {
     let id = UUID()
     
     var body: some View {
@@ -16,6 +16,10 @@ struct ScrollView: View, Identifiable, ViewContents {
     
     func getViewContent() -> String {
         "Scroll Components"
+    }
+    
+    func getLabelIcon() -> String {
+        "scroll"
     }
 }
 

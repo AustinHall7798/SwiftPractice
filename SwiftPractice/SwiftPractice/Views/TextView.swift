@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TextView: View, Identifiable, ViewContents {
+struct TextView: View, Identifiable, CustomView {
     let id = UUID()
 
     var body: some View {
@@ -16,6 +16,10 @@ struct TextView: View, Identifiable, ViewContents {
     
     func getViewContent() -> String {
         "Text Components"
+    }
+    
+    func getLabelIcon() -> String {
+        "text.bubble.fill"
     }
 }
 

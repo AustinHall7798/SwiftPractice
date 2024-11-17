@@ -7,15 +7,22 @@
 
 import SwiftUI
 
-struct FormView: View, Identifiable, ViewContents {
+struct FormView: View, Identifiable, CustomProtocol {
     let id = UUID()
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Image(systemName: "note.text")
+            Text("Form View")
+        }
     }
     
     func getViewContent() -> String {
         "Form Components"
+    }
+    
+    func getLabelIcon() -> String {
+        "note.text"
     }
 }
 

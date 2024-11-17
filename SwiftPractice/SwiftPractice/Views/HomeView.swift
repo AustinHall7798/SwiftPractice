@@ -14,18 +14,18 @@ struct HomeView: View {
     
     var body: some View {
         NavigationStack {
-            List {
-                NavigationLink(destination: formView) {
-                    Text(formView.getViewContent())
+            List(AllViews.allCases) {
+                $0.view
+            }
+            .navigationBarTitle(Text("Components"), displayMode: .inline)
+            .listStyle(.inset)
+            .toolbar {
+                NavigationLink {
+                    SettingsView()
+                } label: {
+                    Image(systemName: "gearshape.fill")
                 }
-                
-                NavigationLink(destination: scrollView) {
-                    Text(scrollView.getViewContent())
-                }
-                
-                NavigationLink(destination: textView) {
-                    Text(textView.getViewContent())
-                }
+                .accessibilityLabel("New Scrum")
             }
         }
     }
